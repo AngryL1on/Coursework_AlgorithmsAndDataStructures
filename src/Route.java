@@ -55,6 +55,11 @@ public class Route {
         this.locationPoints = locationPoints;
     }
 
+    // Method to increase route popularity
+    public void increasePopularity() {
+        this.popularity++;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -75,12 +80,12 @@ public class Route {
     // Optional: toString method for easy printing of Route objects
     @Override
     public String toString() {
-        return "Route{" +
-                "id='" + id + '\'' +
-                ", distance=" + distance +
-                ", popularity=" + popularity +
-                ", isFavorite=" + isFavorite +
-                ", locationPoints=" + locationPoints +
+        return "Route {" +
+                "id = '" + id + '\'' +
+                ", distance = " + distance +
+                ", popularity = " + popularity +
+                ", isFavorite = " + isFavorite +
+                ", locationPoints = " + locationPoints +
                 '}';
     }
 }
