@@ -6,7 +6,7 @@ public class LinkedListNavigator implements Navigator {
     private CustomLinkedList routes;
 
     public LinkedListNavigator() {
-        routes = new CustomLinkedList();
+        routes = new CustomLinkedList<>();
     }
 
     @Override
@@ -60,7 +60,7 @@ public class LinkedListNavigator implements Navigator {
 
     @Override
     public Iterable<Route> searchRoutes(String startPoint, String endPoint) {
-        List<Route> result = new ArrayList<>();
+        CustomLinkedList<Route> result = new CustomLinkedList<>();
         for (int i = 0; i < routes.size(); i++) {
             Route route = routes.get(i);
             int startIndex = route.getLocationPoints().indexOf(startPoint);
@@ -93,7 +93,7 @@ public class LinkedListNavigator implements Navigator {
 
     @Override
     public Iterable<Route> getFavoriteRoutes(String destinationPoint) {
-        List<Route> result = new ArrayList<>();
+        CustomLinkedList<Route> result = new CustomLinkedList<>();
         for (int i = 0; i < routes.size(); i++) {
             Route route = routes.get(i);
             if (route.isFavorite() &&
